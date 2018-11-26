@@ -39,6 +39,8 @@ def vidskiptavinir_options():
         taka_af_bannlista()
     elif input_num == 7:
         sekta_vidskiptavini()
+    elif input_num == 8:
+        print_options()
 
 def skra_vidskiptavin():
     nafn = input("Nafn: ")
@@ -80,6 +82,8 @@ def bilafloti_options():
         leita_ad_bil()
     elif input_num == 7:
         biladir_bilar()
+    elif input_num == 8:
+        print_options()
 
 def birta_lausa_bila():
     dags_fyrri_string = input("Dagsetning leigu: ")
@@ -145,13 +149,15 @@ def afgreidsla_options():
         breyta_vidskiptavin()
     elif input_num == 9:
         breyta_pontun()
+    elif input_num == 10:
+        print_options()
 
 def pantanir_options():
     print("1. Skrá pöntun")
     print("2. Breyta pöntun")
     print("3. Fletta upp pöntun")
     print("4. Bakfæra pöntun")
-    print("8. Til baka")
+    print("5. Til baka")
     input_num = int(input("Val: "))
     if input_num == 1:
         skra_pontun()
@@ -161,6 +167,8 @@ def pantanir_options():
         fletta_pontun()
     elif input_num == 4:
         bakfaera_pontun()
+    elif input_num == 5:
+        print_options()
 
 def fletta_pontun():
     kt = input("Hver er kennitalan?")
