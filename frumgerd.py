@@ -3,6 +3,9 @@ def skra_vidskiptavin():
 
 def afskra_vidskiptavin():
     pass
+
+def fletta_vidskiptavin():
+    pass
     
 def print_options():
     print("1.  Viðskiptavinir")
