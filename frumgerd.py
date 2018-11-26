@@ -143,6 +143,14 @@ def fletta_pontun():
     kt = input("Hver er kennitalan?")
     print("Þín pöntun er frá 10/12/18 til 14/12/18 á rauðan jeppa, SB-463")
 
+def bakfaera_pontun():
+    fletta_pontun()
+    choice = input("Viltu eyða þessari pöntun? (y/n)")
+    if(choice == "y"):
+        print("Því hefur verið eytt")
+    else:
+        print("Hætt við")
+
 
 print("Veldu valmöguleika?")
 
