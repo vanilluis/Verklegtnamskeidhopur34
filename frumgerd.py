@@ -1,6 +1,3 @@
-def skra_vidskiptavin():
-    pass
-
 def afskra_vidskiptavin():
     kt = input("Hvern a að afskrá? (kennitala) ")
     confirm = input("Afskra: Johana Einarsdottir, {}? (y/n)").format(kt)
@@ -9,10 +6,6 @@ def afskra_vidskiptavin():
     else:
         print("Hætt við")
 
-
-def fletta_vidskiptavin():
-    pass
-    
 def print_options():
     print("1.  Viðskiptavinir")
     print("2.  Bílafloti")
@@ -53,6 +46,18 @@ def vidskiptavinir_options():
         taka_af_bannlista()
     elif input_num == 7:
         sekta_vidskiptavini()
+
+def skra_vidskiptavin():
+    nafn = input("Nafn: ")
+    kennitala = input("Kennitala: ")
+
+def afskra_vidskiptavin():
+    kennitala = input("Kennitala: ")
+    print("Viðskiptavinur með kt: " + kennitala + " hefur verið afskráður.")
+
+def fletta_vidskiptavin():
+    pass
+
 
 def bilafloti_options():
     print("1.  Birta lausa bíla")
