@@ -64,7 +64,7 @@ def fletta_vidskiptavin():
     elif val == 2:
         fletta_vidskiptavin_nafn()
     elif val == 3:
-        fletta_vidskiptavin_símanr()
+        fletta_vidskiptavin_simanr()
     elif val == 4:
         vidskiptavinir_options()
 
@@ -80,7 +80,7 @@ def fletta_vidskiptavin_nafn():
     print("Kennitala: 0303782289")
     print("Símanr: 8886785")
 
-def fletta_vidskiptavin_símanr():
+def fletta_vidskiptavin_simanr():
     simanr = input("Símanúmer: ")
     print("Nafn: Jón Ólafsson")
     print("Kennitala: 0303782289")
