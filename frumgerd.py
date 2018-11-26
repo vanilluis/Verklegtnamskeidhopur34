@@ -9,6 +9,7 @@ def afskra_vidskiptavin():
     else:
         print("Hætt við")
 
+
 def fletta_vidskiptavin():
     pass
     
@@ -103,6 +104,24 @@ def afgreidsla_options():
     print("8.  Uppfæra viðskiptavin") 
     print("9.  Breyta pöntun")
     input_num = int(input("Val: "))
+    if input_num == 1:
+        birta_lausa_bila()
+    elif input_num == 2:
+        skra_vidskiptavin()
+    elif input_num == 3:
+        skra_pontun()
+    elif input_num == 4:
+        kostnadarmat()
+    elif input_num == 5:
+        skila_bil()
+    elif input_num == 6:
+        afskra_vidskiptavin()
+    elif input_num == 7:
+        bakfaera_pontun()
+    elif input_num == 8:
+        breyta_vidskiptavin()
+    elif input_num == 9:
+        breyta_pontun()
 
 def pantanir_options():
     print("1. Skrá pöntun")
