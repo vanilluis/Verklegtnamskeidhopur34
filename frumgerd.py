@@ -2,7 +2,12 @@ def skra_vidskiptavin():
     pass
 
 def afskra_vidskiptavin():
-  pass
+    kt = input("Hvern a að afskrá? (kennitala) ")
+    confirm = input("Afskra: Johana Einarsdottir, {}? (y/n)").format(kt)
+    if(confirm == "y"):
+        print("Afskráð")
+    else:
+        print("Hætt við")
 
 def fletta_vidskiptavin():
     pass
