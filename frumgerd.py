@@ -42,9 +42,10 @@ def vidskiptavinir_options():
 def skra_vidskiptavin():
     nafn = input("Nafn: ")
     kennitala = input("Kennitala: ")
+    símanr = input("Símanúmer: ")
 
 def afskra_vidskiptavin():
-    kt = input("Hvern a að afskrá? (kennitala) ")
+    kt = input("Hvern a að afskrá? (kennitala): ")
     confirm = input("Afskra: Johana Einarsdottir, {}? (y/n)".format(kt))
     if(confirm == "y"):
         print("Afskráð")
@@ -52,8 +53,76 @@ def afskra_vidskiptavin():
         print("Hætt við")
 
 def fletta_vidskiptavin():
-    pass
+    print("Fletta upp viðskiptavini eftir:")
+    print("1. Kennitölu")
+    print("2. Nafni")
+    print("3. Símanúmeri")
+    print("4. Til baka")
+    val = int(input("Val: "))
+    if val == 1:
+        fletta_vidskiptavin_kt()
+    elif val == 2:
+        fletta_vidskiptavin_nafn()
+    elif val == 3:
+        fletta_vidskiptavin_símanr()
+    elif val == 4:
+        vidskiptavinir_options()
 
+def fletta_vidskiptavin_kt():
+    kennitala = input("Kennitala: ")
+    print("Nafn: Jón Ólafsson")
+    print("Kennitala: " + kennitala)
+    print("Símanr: 8886785")
+
+def fletta_vidskiptavin_nafn():
+    nafn = input("Nafn: ")
+    print("Nafn: " + nafn)
+    print("Kennitala: 0303782289")
+    print("Símanr: 8886785")
+
+def fletta_vidskiptavin_símanr():
+    simanr = input("Símanúmer: ")
+    print("Nafn: Jón Ólafsson")
+    print("Kennitala: 0303782289")
+    print("Símanr: " + simanr)
+
+def breyta_vidskiptavin():
+    kennitala = input("Kennitala: ")
+    print("Breyta: ")
+    print("1. Nafni")
+    print("2. Símanúmeri")
+    print("3. Til baka")
+    val = int(input("Val:"))
+    if val == 1:
+        nafn = input("Nafn: ")
+    elif val == 2:
+        simanr = input("Símanúmer: ")
+    elif val == 3:
+        vidskiptavinir_options()
+
+def setja_a_bannlista():
+    kennitala = input("Kennitala: ")
+    stadfesta = input("Setja á bannlista: Jón Ólafsson, {}? (y/n)".format(kennitala))
+    if(stadfesta == "y"):
+        print("Jón Ólafsson hefur verið færður á bannlista.")
+    else:
+        print("Hætt við.")
+    
+def taka_af_bannlista():
+    kennitala = input("Kennitala: ")
+    stadfesta = input("Taka af bannlista: Jón Ólafsson, {}? (y/n)".format(kennitala))
+    if(stadfesta == "y"):
+        print("Jón Ólafsson hefur verið tekinn af bannlista.")
+    else:
+        print("Hætt við.")
+    
+def sekta_vidskiptavini():
+    kennitala = input("Kennitala: ")
+    stadfesta = input("Sekta: Jón Ólafsson, {}? (y/n)".format(kennitala))
+    if(stadfesta == "y"):
+        print("Jón Ólafsson hefur verið sektaður.")
+    else:
+        print("Hætt við.") 
 
 def bilafloti_options():
     print("1.  Birta lausa bíla")
