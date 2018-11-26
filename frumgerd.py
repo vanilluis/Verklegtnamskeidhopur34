@@ -1,3 +1,5 @@
+def skra_vidskiptavin():
+    pass
 def print_options():
     print("1.  Viðskiptavinir")
     print("2.  Bílafloti")
