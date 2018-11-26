@@ -130,6 +130,18 @@ def pantanir_options():
     print("3. Fletta upp pöntun")
     print("4. Bakfæra pöntun")
     input_num = int(input("Val: "))
+    if input_num == 1:
+        skra_pontun()
+    elif input_num == 2:
+        breyta_pontun()
+    elif input_num == 3:
+        fletta_pontun()
+    elif input_num == 4:
+        bakfaera_pontun()
+
+def fletta_pontun():
+    kt = input("Hver er kennitalan?")
+    print("Þín pöntun er frá 10/12/18 til 14/12/18 á rauðan jeppa, SB-463")
 
 
 print("Veldu valmöguleika?")
