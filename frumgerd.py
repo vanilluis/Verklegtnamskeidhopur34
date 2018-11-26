@@ -1,4 +1,10 @@
-
+def afskra_vidskiptavin():
+    kt = input("Hvern a að afskrá? (kennitala) ")
+    confirm = input("Afskra: Johana Einarsdottir, {}? (y/n)").format(kt)
+    if(confirm == "y"):
+        print("Afskráð")
+    else:
+        print("Hætt við")
 
 def print_options():
     print("1.  Viðskiptavinir")
@@ -65,17 +71,32 @@ def bilafloti_options():
     if input_num == 1:
         birta_lausa_bila()
     elif input_num == 2:
-        fletta_vidskiptavin()
+        birta_utleigda_bila()
     elif input_num == 3:
-        afskra_vidskiptavin()
+        skila_bil()
     elif input_num == 4:
-        breyta_vidskiptavin()
+        skra_bil()
     elif input_num == 5:
-        setja_a_bannlista()
+        afskra_bil()
     elif input_num == 6:
-        taka_af_bannlista()
+        leita_ad_bil()
     elif input_num == 7:
-        sekta_vidskiptavini()
+        biladir_bilar()
+
+def birta_lausa_bila():
+    print("SB-463, 1998, jeppi, rauður, 4500 kr/dag")
+    print("EU-N45, 2014, smábíll, grár, 2500 kr/dag")
+
+def birta_utleigda_bila():
+    print("SX-452, 2003, jeppi, grænn, 3000 kr/dag")
+
+def skila_bil():
+    bilnumer = input("Bílnúmer: ")
+    print("Bílnum {} hefur verið skilað!".format(bilnumer))
+
+def skra_bil():
+    bilnumer = input("Bílnúmer: ")
+    print("Bíllinn {} hefur verið skráður!".format(bilnumer))
 
 def afgreidsla_options():
     print("1.  Birta lausa bíla")
@@ -88,6 +109,24 @@ def afgreidsla_options():
     print("8.  Uppfæra viðskiptavin") 
     print("9.  Breyta pöntun")
     input_num = int(input("Val: "))
+    if input_num == 1:
+        birta_lausa_bila()
+    elif input_num == 2:
+        skra_vidskiptavin()
+    elif input_num == 3:
+        skra_pontun()
+    elif input_num == 4:
+        kostnadarmat()
+    elif input_num == 5:
+        skila_bil()
+    elif input_num == 6:
+        afskra_vidskiptavin()
+    elif input_num == 7:
+        bakfaera_pontun()
+    elif input_num == 8:
+        breyta_vidskiptavin()
+    elif input_num == 9:
+        breyta_pontun()
 
 def pantanir_options():
     print("1. Skrá pöntun")
