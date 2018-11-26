@@ -1,11 +1,3 @@
-def afskra_vidskiptavin():
-    kt = input("Hvern a að afskrá? (kennitala) ")
-    confirm = input("Afskra: Johana Einarsdottir, {}? (y/n)").format(kt)
-    if(confirm == "y"):
-        print("Afskráð")
-    else:
-        print("Hætt við")
-
 def print_options():
     print("1.  Viðskiptavinir")
     print("2.  Bílafloti")
@@ -52,8 +44,12 @@ def skra_vidskiptavin():
     kennitala = input("Kennitala: ")
 
 def afskra_vidskiptavin():
-    kennitala = input("Kennitala: ")
-    print("Viðskiptavinur með kt: " + kennitala + " hefur verið afskráður.")
+    kt = input("Hvern a að afskrá? (kennitala) ")
+    confirm = input("Afskra: Johana Einarsdottir, {}? (y/n)".format(kt))
+    if(confirm == "y"):
+        print("Afskráð")
+    else:
+        print("Hætt við")
 
 def fletta_vidskiptavin():
     pass
