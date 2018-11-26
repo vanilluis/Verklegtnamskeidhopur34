@@ -23,6 +23,7 @@ def vidskiptavinir_options():
     print("5.  Setja á bannlista")
     print("6.  Taka af bannlista")
     print("7.  Sekta viðskiptavin")
+    print("8.  Til baka")
     input_num = int(input("Val: "))
     if input_num == 1:
         skra_vidskiptavin()
@@ -63,6 +64,7 @@ def bilafloti_options():
     print("5.  Afskrá bíl")
     print("6.  Leita að bíl")
     print("7.  Bilaðir bílar")
+    print("8.  Til baka")
     input_num = int(input("Val: "))
     if input_num == 1:
         birta_lausa_bila()
@@ -80,10 +82,17 @@ def bilafloti_options():
         biladir_bilar()
 
 def birta_lausa_bila():
+    dags_fyrri_string = input("Dagsetning leigu: ")
+    dags_seinni_string = input("Dagsetning skila: ")
+    print("Eftirfarandi bílar eru lausir frá {} til {}:".format(dags_fyrri_string, dags_seinni_string))
     print("SB-463, 1998, jeppi, rauður, 4500 kr/dag")
     print("EU-N45, 2014, smábíll, grár, 2500 kr/dag")
+    
 
 def birta_utleigda_bila():
+    dags_fyrri_string = input("Dagsetning leigu: ")
+    dags_seinni_string = input("Dagsetning skila: ")
+    print("Eftirfarandi bílar eru í útleigu á tímabilinu frá {} til {}:".format(dags_fyrri_string, dags_seinni_string))
     print("SX-452, 2003, jeppi, grænn, 3000 kr/dag")
 
 def skila_bil():
@@ -93,6 +102,18 @@ def skila_bil():
 def skra_bil():
     bilnumer = input("Bílnúmer: ")
     print("Bíllinn {} hefur verið skráður!".format(bilnumer))
+
+def afskra_bil():
+    bilnumer = input("Bílnúmer: ")
+    print("Bíllinn {} hefur verið afskráður!".format(bilnumer))
+
+def leita_ad_bil():
+    bilnumer = input("Bílnúmer: ")
+    print("{}, 2003, jeppi, grænn, 3000 kr/dag".format(bilnumer))
+
+def biladir_bilar():
+    pass
+
 
 def afgreidsla_options():
     print("1.  Birta lausa bíla")
@@ -104,6 +125,7 @@ def afgreidsla_options():
     print("7.  Bakfæra pöntun")
     print("8.  Uppfæra viðskiptavin") 
     print("9.  Breyta pöntun")
+    print("10. Til baka")
     input_num = int(input("Val: "))
     if input_num == 1:
         birta_lausa_bila()
@@ -129,6 +151,7 @@ def pantanir_options():
     print("2. Breyta pöntun")
     print("3. Fletta upp pöntun")
     print("4. Bakfæra pöntun")
+    print("8. Til baka")
     input_num = int(input("Val: "))
 
 
