@@ -124,6 +124,41 @@ def afgreidsla_options():
     elif input_num == 9:
         breyta_pontun()
 
+def skra_pontun():
+    print("Leigutímabil?")
+    fra = input("Frá (YYYY, MM, DD): ")
+    til = input("Til (YYYY, MM, DD): ")
+    print()
+    print("Lausir bílar á leigutímabili ({}) - ({})".format(fra, til))
+    print()
+    print("SB-463, 1998, jeppi, rauður, 4500 kr/dag")
+    print("EU-N45, 2014, smábíll, grár, 2500 kr/dag")
+    print()
+    val = input("Veldu bíl (AA-X99): ")
+    print("")
+    print("Bíllinn",val,"hefur verið leigður út ({}) - ({})".format(fra, til))
+
+def kostnadarmat():
+    bill_verð = 4500 # bara dæmi
+    pontun_til = input("Er pöntun til (j/n):")
+    if pontun_til.lower() == "j":
+        dagur_a, dagur_b = fletta_pontun()
+    else:
+        fra = input("Frá (YYYY, MM, DD): ")
+        til = input("Til (YYYY, MM, DD): ")
+        dagur_a = fra.split(",")[2]
+        dagur_a = int(dagur_a.strip())
+        dagur_b = til.split(",")[2]
+        dagur_b = int(dagur_b.strip())
+        # vantar með mán en erum ekki með date svo læt þetta duga
+    # birta_lausa_bila(fra, til) # fá hvaða bílar eru lausir
+    val = input("Veldu bíl (AA-X99): ")
+    # við fáum tímabil frá fletta_pontun og mínusum fyrra tímabilið frá því seinna
+    # þá fáum við hve marga daga viðkomandi hefur bílinn og margföldum dagana við dagskostnaðinn
+    dagar = dagur_b - dagur_a
+    verð_samtals = dagar*bill_verð
+    print("Kostnaðarmat:", verð_samtals, "Kr.")
+
 def pantanir_options():
     print("1. Skrá pöntun")
     print("2. Breyta pöntun")
