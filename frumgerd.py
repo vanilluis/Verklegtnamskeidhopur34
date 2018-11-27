@@ -169,8 +169,10 @@ def birta_lausa_bila():
     dags_fyrri_string = input("Dagsetning leigu: ")
     dags_seinni_string = input("Dagsetning skila: ")
     print("Eftirfarandi bílar eru lausir frá {} til {}:".format(dags_fyrri_string, dags_seinni_string))
-    print("SB-463, 1998, jeppi, rauður, 4500 kr/dag")
-    print("EU-N45, 2014, smábíll, grár, 2500 kr/dag")
+    print("{:<12}{:<14}{:<8}{:<14}{:<12}".format("Bílnúmer", "Tegund", "Árgerð", "Litur", "Verð"))
+    print(60*"-")
+    print("{:<12}{:<14}{:<8}{:<14}{:<12}".format("SB-463", "Fólksbíll", "1998", "Rauður", "4500 kr/dag"))
+    print("{:<12}{:<14}{:<8}{:<14}{:<12}".format("EU-N45", "Smábíll", "2014", "Grár", "2500 kr/dag"))
     print_options()
     
 
@@ -178,7 +180,9 @@ def birta_utleigda_bila():
     dags_fyrri_string = input("Dagsetning leigu: ")
     dags_seinni_string = input("Dagsetning skila: ")
     print("Eftirfarandi bílar eru í útleigu á tímabilinu frá {} til {}:".format(dags_fyrri_string, dags_seinni_string))
-    print("SX-452, 2003, jeppi, grænn, 3000 kr/dag")
+    print("{:<12}{:<14}{:<8}{:<14}{:<12}".format("Bílnúmer", "Tegund", "Árgerð", "Litur", "Verð"))
+    print(60*"-")
+    print("{:<12}{:<14}{:<8}{:<14}{:<12}".format("SX-452", "Jeppi", "2003", "Grænn", "3000 kr/dag"))
     print_options()
 
 def skila_bil():
@@ -198,13 +202,15 @@ def afskra_bil():
 
 def leita_ad_bil():
     bilnumer = input("Bílnúmer: ")
-    print("{}, 2003, jeppi, grænn, 3000 kr/dag".format(bilnumer))
+    print("{:<12}{:<14}{:<8}{:<14}{:<12}".format("Bílnúmer", "Tegund", "Árgerð", "Litur", "Verð"))
+    print(60*"-")
+    print("{:<12}{:<14}{:<8}{:<14}{:<12}".format(bilnumer, "2003", "Jeppi", "Grænn", "3000 kr/dag"))
     print_options()
 
 def biladir_bilar():
     print("1. Skrá bíl")
     print("2. Afskrá bíl")
-    print("3. Skoða bíla")
+    print("3. Birta bilaða bíla")
     print("4. Til baka")
     input_num = innt(input("Val: "))
     if input_num == 1:
@@ -228,7 +234,9 @@ def skra_bilada_bil():
     print_options()
 
 def skoda_bil():
-    print("GHY-234, bill, blar, vélabilun")
+    print("{:<12}{:<14}{:<8}{:<14}{:<12}".format("Bílnúmer", "Tegund", "Árgerð", "Litur", "Verð"))
+    print(60*"-")
+    print("{:<12}{:<14}{:<8}{:<14}{:<12}".format("GHY-234", "Fólksbíll", "2009", "Blár", "Vélarbilun"))
     print_options()
 
 def afgreidsla_options():
