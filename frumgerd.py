@@ -104,8 +104,10 @@ def breyta_vidskiptavin():
     val = int(input("Val:"))
     if val == 1:
         nafn = input("Nafn: ")
+        print_options()
     elif val == 2:
         simanr = input("Símanúmer: ")
+        print_options()
     elif val == 3:
         vidskiptavinir_options()
 
