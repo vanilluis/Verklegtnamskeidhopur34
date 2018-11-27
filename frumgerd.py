@@ -202,9 +202,34 @@ def leita_ad_bil():
     print_options()
 
 def biladir_bilar():
-    #ATH á eftir að útfæra þetta fall
+    print("1. Skrá bíl")
+    print("2. Afskrá bíl")
+    print("3. Skoða bíla")
+    print("4. Til baka")
+    input_num = innt(input("Val: "))
+    if input_num == 1:
+        skra_bilada_bil()
+    elif input_num == 2:
+        afskra_bilada_bil()
+    elif input_num == 3:
+        skoda_bil()
+    else:
+        print_options()
+
+def skra_bilada_bil():
+    bilnumer = input("Bílnúmer: ")
+    reason = input("Af hverju er hann bilaður? ")
+    print("Bíllinn {} hefur verið skráður sem bilaður.".format(bilnumer))
     print_options()
 
+def skra_bilada_bil():
+    bilnumer = input("Bílnúmer: ")
+    print("Bíllinn {} hefur verið afskráður sem bilaður.".format(bilnumer))
+    print_options()
+
+def skoda_bil():
+    print("GHY-234, bill, blar, vélabilun")
+    print_options()
 
 def afgreidsla_options():
     print("1.  Birta lausa bíla")
@@ -300,6 +325,25 @@ def pantanir_options():
         bakfaera_pontun()
     elif input_num == 5:
         print_options()
+
+def breyta_pontun():
+    kennitala = input("Hver er kenntialan? ")
+    print("Hverju viltu breyta?")
+    print("1. Nafn")
+    print("2. Dagsetning")
+    print("3. Bíl")
+    print("4. Til baka")
+    input_num = int(input("Val: "))
+    if input_num == 1:
+        nafn = input("Nafn: ")
+    elif input_num == 2:
+        fra = input("Frá (YYYY, MM, DD): ")
+        til = input("Til (YYYY, MM, DD): ")
+    elif input_num == 3:
+        bil = input("Bíl: ")
+    else:
+        print_options()
+    print_options()
 
 def fletta_pontun():
     kt = input("Hver er kennitalan?")
