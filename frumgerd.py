@@ -313,11 +313,23 @@ def skra_pontun():
     print("{:<12}{:<14}{:<8}{:<14}{:<12}".format("SB-463", "Fólksbíll", "1998", "Rauður", "4500 kr/dag"))
     print("{:<12}{:<14}{:<8}{:<14}{:<12}".format("EU-N45", "Smábíll", "2014", "Grár", "2500 kr/dag"))
     print()
-    val = input("Veldu bíl (AA-X99): ")
+    val = input("Veldu bíl (AA-X99) eða n til að hætta við: ")
     print("")
-    print("Bíllinn",val,"hefur verið leigður út ({}) - ({})".format(fra, til))
-    print()
-    print_options()
+    if val.lower() == "n":
+        print("Þú hefur hætt við að leigja út bíl")
+        print()
+        print_options()
+    else:
+        print("Áætlaður kostnaður án tryggingar: 45.000 kr.")
+        val = input("Samþykkja? (y/n): ")
+        if val.lower() == "y":
+            print("Bíllinn",val,"hefur verið leigður út ({}) - ({})".format(fra, til))
+            print()
+            print_options()
+        else:
+            print("Þú hefur hætt við að leigja út bíl")
+            print()
+            print_options()
 
 def kostnadarmat():
     bill_verð = 4500 # bara dæmi
