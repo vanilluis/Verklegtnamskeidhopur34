@@ -52,6 +52,7 @@ def skra_vidskiptavin():
     kennitala = input("Kennitala: ")
     símanr = input("Símanúmer: ")
     print("Viðskiptavinur {} hefur verið skráður".format(nafn))
+    print()
     print_options()
 
 def afskra_vidskiptavin():
