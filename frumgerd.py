@@ -3,6 +3,7 @@ def print_options():
     print("2.  Bílafloti")
     print("3.  Afgreiðsla")
     print("4.  Pantanir")
+    print("5.  Hætta")
     input_num = int(input("Val: "))
     print()
     if input_num == 1:
@@ -13,6 +14,8 @@ def print_options():
         afgreidsla_options()
     elif input_num == 4:
         pantanir_options()
+    elif input_num == 5:
+        pass
     else:
         print_options()
 
@@ -48,15 +51,14 @@ def skra_vidskiptavin():
     nafn = input("Nafn: ")
     kennitala = input("Kennitala: ")
     símanr = input("Símanúmer: ")
-    print("Viðskiptavinur hefur verið skráður")
-    print()
+    print("Viðskiptavinur {} hefur verið skráður".format(nafn))
     print_options()
 
 def afskra_vidskiptavin():
     kt = input("Hvern a að afskrá? (kennitala): ")
-    confirm = input("Afskra: Johana Einarsdottir, {}? (y/n)".format(kt))
+    confirm = input("Afskrá: Jóhanna Einarsdóttir, {}? (y/n)".format(kt))
     if(confirm == "y"):
-        print("Afskráð")
+        print("Jóhanna Einarsdóttir afskráð")
     else:
         print("Hætt við")
     print()
@@ -105,6 +107,10 @@ def fletta_vidskiptavin_simanr():
 
 def breyta_vidskiptavin():
     kennitala = input("Kennitala: ")
+    print("Viðskiptavinur fundinn.")
+    print("Nafn: Jón Ólafsson")
+    print("Kennitala: " + kennitala)
+    print("Símanr: 8886785")
     print("Breyta: ")
     print("1. Nafni")
     print("2. Símanúmeri")
@@ -113,9 +119,11 @@ def breyta_vidskiptavin():
     print()
     if val == 1:
         nafn = input("Nafn: ")
+        print("Nafni hefur verið breytt.")
         print_options()
     elif val == 2:
         simanr = input("Símanúmer: ")
+        print("Símanúmer hefur verið breytt.")
         print_options()
     elif val == 3:
         vidskiptavinir_options()
@@ -318,24 +326,24 @@ def skra_pontun():
 
 def kostnadarmat():
     bill_verð = 4500 # bara dæmi
-    pontun_til = input("Er pöntun til (j/n):")
+    pontun_til = input("Er pöntun til (j/n): ")
     if pontun_til.lower() == "j":
         # dagur_a, dagur_b = fletta_pontun()
-        kt = input("Hver er kennitalan?")
+        kt = input("Hver er kennitalan? ")
         print("Þín pöntun er frá 10/12/18 til 14/12/18 á rauðan fólksbíl, SB-463")
-        dagur_a = "2018,12,10"
-        dagur_b = "2018,12,14"
+        fra = "2018,12,10"
+        til = "2018,12,14"
 
     else:
         fra = input("Frá (YYYY, MM, DD): ")
         til = input("Til (YYYY, MM, DD): ")
-        dagur_a = fra.split(",")[2]
-        dagur_a = int(dagur_a.strip())
-        dagur_b = til.split(",")[2]
-        dagur_b = int(dagur_b.strip())
-        # vantar með mán en erum ekki með date svo læt þetta duga
+    dagur_a = fra.split(",")[2]
+    dagur_a = int(dagur_a.strip())
+    dagur_b = til.split(",")[2]
+    dagur_b = int(dagur_b.strip())
+    # vantar með mán en erum ekki með date svo læt þetta duga
     # birta_lausa_bila(fra, til) # fá hvaða bílar eru lausir
-    val = input("Veldu bíl (AA-X99): ")
+    # val = input("Veldu bíl (AA-X99): ")
     # við fáum tímabil frá fletta_pontun og mínusum fyrra tímabilið frá því seinna
     # þá fáum við hve marga daga viðkomandi hefur bílinn og margföldum dagana við dagskostnaðinn
     dagar = dagur_b - dagur_a
