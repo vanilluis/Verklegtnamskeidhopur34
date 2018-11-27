@@ -1,4 +1,5 @@
 def print_options():
+    print("Veldu valmöguleika")
     print("1.  Viðskiptavinir")
     print("2.  Bílafloti")
     print("3.  Afgreiðsla")
@@ -420,6 +421,6 @@ def bakfaera_pontun():
     print_options()
 
 
-print("Veldu valmöguleika?")
-
+print("Velkomin í Bílaleiguna IceCarRentals.\nDrive cheap, not safe!")
+print()
 print_options()
