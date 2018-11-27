@@ -3,6 +3,7 @@ def print_options():
     print("2.  Bílafloti")
     print("3.  Afgreiðsla")
     print("4.  Pantanir")
+    print("5.  Hætta")
     input_num = int(input("Val: "))
     if input_num == 1:
         vidskiptavinir_options()
@@ -12,6 +13,8 @@ def print_options():
         afgreidsla_options()
     elif input_num == 4:
         pantanir_options()
+    elif input_num == 5:
+        pass
     else:
         print_options()
 
@@ -46,14 +49,14 @@ def skra_vidskiptavin():
     nafn = input("Nafn: ")
     kennitala = input("Kennitala: ")
     símanr = input("Símanúmer: ")
-    print("Viðskiptavinur hefur verið skráður")
+    print("Viðskiptavinur {} hefur verið skráður".format(nafn))
     print_options()
 
 def afskra_vidskiptavin():
     kt = input("Hvern a að afskrá? (kennitala): ")
-    confirm = input("Afskra: Johana Einarsdottir, {}? (y/n)".format(kt))
+    confirm = input("Afskrá: Jóhanna Einarsdóttir, {}? (y/n)".format(kt))
     if(confirm == "y"):
-        print("Afskráð")
+        print("Jóhanna Einarsdóttir afskráð")
     else:
         print("Hætt við")
     print_options()
@@ -97,6 +100,10 @@ def fletta_vidskiptavin_simanr():
 
 def breyta_vidskiptavin():
     kennitala = input("Kennitala: ")
+    print("Viðskiptavinur fundinn.")
+    print("Nafn: Jón Ólafsson")
+    print("Kennitala: " + kennitala)
+    print("Símanr: 8886785")
     print("Breyta: ")
     print("1. Nafni")
     print("2. Símanúmeri")
@@ -104,9 +111,11 @@ def breyta_vidskiptavin():
     val = int(input("Val:"))
     if val == 1:
         nafn = input("Nafn: ")
+        print("Nafni hefur verið breytt.")
         print_options()
     elif val == 2:
         simanr = input("Símanúmer: ")
+        print("Símanúmer hefur verið breytt.")
         print_options()
     elif val == 3:
         vidskiptavinir_options()
