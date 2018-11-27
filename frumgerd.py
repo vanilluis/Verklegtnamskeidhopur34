@@ -46,6 +46,8 @@ def skra_vidskiptavin():
     nafn = input("Nafn: ")
     kennitala = input("Kennitala: ")
     símanr = input("Símanúmer: ")
+    print("Viðskiptavinur hefur verið skráður")
+    print_options()
 
 def afskra_vidskiptavin():
     kt = input("Hvern a að afskrá? (kennitala): ")
@@ -54,6 +56,7 @@ def afskra_vidskiptavin():
         print("Afskráð")
     else:
         print("Hætt við")
+    print_options()
 
 def fletta_vidskiptavin():
     print("Fletta upp viðskiptavini eftir:")
@@ -76,18 +79,21 @@ def fletta_vidskiptavin_kt():
     print("Nafn: Jón Ólafsson")
     print("Kennitala: " + kennitala)
     print("Símanr: 8886785")
+    print_options()
 
 def fletta_vidskiptavin_nafn():
     nafn = input("Nafn: ")
     print("Nafn: " + nafn)
     print("Kennitala: 0303782289")
     print("Símanr: 8886785")
+    print_options()
 
 def fletta_vidskiptavin_simanr():
     simanr = input("Símanúmer: ")
     print("Nafn: Jón Ólafsson")
     print("Kennitala: 0303782289")
     print("Símanr: " + simanr)
+    print_options()
 
 def breyta_vidskiptavin():
     kennitala = input("Kennitala: ")
@@ -110,6 +116,7 @@ def setja_a_bannlista():
         print("Jón Ólafsson hefur verið færður á bannlista.")
     else:
         print("Hætt við.")
+    print_options()
     
 def taka_af_bannlista():
     kennitala = input("Kennitala: ")
@@ -118,6 +125,7 @@ def taka_af_bannlista():
         print("Jón Ólafsson hefur verið tekinn af bannlista.")
     else:
         print("Hætt við.")
+    print_options()
     
 def sekta_vidskiptavini():
     kennitala = input("Kennitala: ")
@@ -126,6 +134,7 @@ def sekta_vidskiptavini():
         print("Jón Ólafsson hefur verið sektaður.")
     else:
         print("Hætt við.") 
+    print_options()
 
 def bilafloti_options():
     print("1.  Birta lausa bíla")
@@ -160,6 +169,7 @@ def birta_lausa_bila():
     print("Eftirfarandi bílar eru lausir frá {} til {}:".format(dags_fyrri_string, dags_seinni_string))
     print("SB-463, 1998, jeppi, rauður, 4500 kr/dag")
     print("EU-N45, 2014, smábíll, grár, 2500 kr/dag")
+    print_options()
     
 
 def birta_utleigda_bila():
@@ -167,25 +177,31 @@ def birta_utleigda_bila():
     dags_seinni_string = input("Dagsetning skila: ")
     print("Eftirfarandi bílar eru í útleigu á tímabilinu frá {} til {}:".format(dags_fyrri_string, dags_seinni_string))
     print("SX-452, 2003, jeppi, grænn, 3000 kr/dag")
+    print_options()
 
 def skila_bil():
     bilnumer = input("Bílnúmer: ")
     print("Bílnum {} hefur verið skilað!".format(bilnumer))
+    print_options()
 
 def skra_bil():
     bilnumer = input("Bílnúmer: ")
     print("Bíllinn {} hefur verið skráður!".format(bilnumer))
+    print_options()
 
 def afskra_bil():
     bilnumer = input("Bílnúmer: ")
     print("Bíllinn {} hefur verið afskráður!".format(bilnumer))
+    print_options()
 
 def leita_ad_bil():
     bilnumer = input("Bílnúmer: ")
     print("{}, 2003, jeppi, grænn, 3000 kr/dag".format(bilnumer))
+    print_options()
 
 def biladir_bilar():
-    pass
+    #ATH á eftir að útfæra þetta fall
+    print_options()
 
 
 def afgreidsla_options():
@@ -234,6 +250,7 @@ def skra_pontun():
     val = input("Veldu bíl (AA-X99): ")
     print("")
     print("Bíllinn",val,"hefur verið leigður út ({}) - ({})".format(fra, til))
+    print_options()
 
 def kostnadarmat():
     bill_verð = 4500 # bara dæmi
@@ -255,6 +272,7 @@ def kostnadarmat():
     dagar = dagur_b - dagur_a
     verð_samtals = dagar*bill_verð
     print("Kostnaðarmat:", verð_samtals, "Kr.")
+    print_options()
 
 def pantanir_options():
     print("1. Skrá pöntun")
@@ -277,6 +295,7 @@ def pantanir_options():
 def fletta_pontun():
     kt = input("Hver er kennitalan?")
     print("Þín pöntun er frá 10/12/18 til 14/12/18 á rauðan jeppa, SB-463")
+    print_options()
 
 def bakfaera_pontun():
     fletta_pontun()
@@ -285,6 +304,7 @@ def bakfaera_pontun():
         print("Því hefur verið eytt")
     else:
         print("Hætt við")
+    print_options()
 
 
 print("Veldu valmöguleika?")
