@@ -260,12 +260,6 @@ def skra_bilada_bil():
     print()
     print_options()
 
-def skra_bilada_bil():
-    bilnumer = input("Bílnúmer: ")
-    print("Bíllinn {} hefur verið afskráður sem bilaður.".format(bilnumer))
-    print()
-    print_options()
-
 def skoda_bil():
     print("{:<12}{:<14}{:<8}{:<14}{:<12}".format("Bílnúmer", "Tegund", "Árgerð", "Litur", "Verð"))
     print(60*"-")
