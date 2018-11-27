@@ -246,8 +246,10 @@ def skra_pontun():
     print()
     print("Lausir bílar á leigutímabili ({}) - ({})".format(fra, til))
     print()
-    print("SB-463, 1998, jeppi, rauður, 4500 kr/dag")
-    print("EU-N45, 2014, smábíll, grár, 2500 kr/dag")
+    print("{:<12}{:<14}{:<8}{:<14}{:<12}".format("Bílnúmer", "Tegund", "Árgerð", "Litur", "Verð"))
+    print(60*"-")
+    print("{:<12}{:<14}{:<8}{:<14}{:<12}".format("SB-463", "Fólksbíll", "1998", "Rauður", "4500 kr/dag"))
+    print("{:<12}{:<14}{:<8}{:<14}{:<12}".format("EU-N45", "Smábíll", "2014", "Grár", "2500 kr/dag"))
     print()
     val = input("Veldu bíl (AA-X99): ")
     print("")
@@ -260,7 +262,7 @@ def kostnadarmat():
     if pontun_til.lower() == "j":
         # dagur_a, dagur_b = fletta_pontun()
         kt = input("Hver er kennitalan?")
-        print("Þín pöntun er frá 10/12/18 til 14/12/18 á rauðan jeppa, SB-463")
+        print("Þín pöntun er frá 10/12/18 til 14/12/18 á rauðan fólksbíl, SB-463")
         dagur_a = "2018,12,10"
         dagur_b = "2018,12,14"
 
