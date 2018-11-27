@@ -420,17 +420,17 @@ def bakfaera_pontun():
     print()
     print_options()
 
-
+print()
 print("Velkomin í Bílaleiguna IceCarRentals.")
+print("-"*37)
 n = 7
-print("{}        _____".format(" "*n))
-print("{}      //  ||\ \ ".format(" "*n))
-print("{} ____//___||_\ \__".format(" "*n))
+print("{}        _______".format(" "*n))
+print("{}       //  ||\ \ ".format(" "*n))
+print("{}  ____//___||_\ \__".format(" "*n))
 print("{} )  _          _    \ ".format(" "*n))
 print("{} |_/ \________/ \___|".format(" "*n))
-print("{}__\_/________\_/_____".format(" "*n))
-
+print("{}___\_/________\_/_____".format(" "*n))
 print("{}Drive cheap, not safe!".format(" "*n))
+print("-"*37)
 
-print()
 print_options()
