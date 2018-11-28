@@ -114,7 +114,7 @@ def fletta_vidskiptavin_nafn():
     nafn = input("Nafn: ")
     print("Nafn: " + nafn)
     print("Kennitala: 0303782289")
-    print("Símanr: 8886785")
+    print("Símanúmer: 8886785")
     print("Netfang: JohnnyBoy23@internet.is")
     print("Kreditkortanúmer: 1234-1234-1234-1234")
     print()
