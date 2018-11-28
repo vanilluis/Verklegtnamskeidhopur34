@@ -5,17 +5,17 @@ def print_options():
     print("3.  Afgreiðsla")
     print("4.  Pantanir")
     print("5.  Hætta")
-    input_num = int(input("Val: "))
+    input_num = input("Val: ")
     print()
-    if input_num == 1:
+    if input_num == "1":
         vidskiptavinir_options()
-    elif input_num == 2:
+    elif input_num == "2":
         bilafloti_options()
-    elif input_num == 3:
+    elif input_num == "3":
         afgreidsla_options()
-    elif input_num == 4:
+    elif input_num == "4":
         pantanir_options()
-    elif input_num == 5:
+    elif input_num == "5":
         pass
     else:
         print_options()
@@ -29,23 +29,23 @@ def vidskiptavinir_options():
     print("6.  Taka af bannlista")
     print("7.  Sekta viðskiptavin")
     print("8.  Til baka")
-    input_num = int(input("Val: "))
+    input_num = input("Val: ")
     print()
-    if input_num == 1:
+    if input_num == "1":
         skra_vidskiptavin()
-    elif input_num == 2:
+    elif input_num == "2":
         fletta_vidskiptavin()
-    elif input_num == 3:
+    elif input_num == "3":
         afskra_vidskiptavin()
-    elif input_num == 4:
+    elif input_num == "4":
         breyta_vidskiptavin()
-    elif input_num == 5:
+    elif input_num == "5":
         setja_a_bannlista()
-    elif input_num == 6:
+    elif input_num == "6":
         taka_af_bannlista()
-    elif input_num == 7:
+    elif input_num == "7":
         sekta_vidskiptavini()
-    elif input_num == 8:
+    elif input_num == "8":
         print_options()
 
 def skra_vidskiptavin():
@@ -74,15 +74,15 @@ def fletta_vidskiptavin():
     print("2. Nafni")
     print("3. Símanúmeri")
     print("4. Til baka")
-    val = int(input("Val: "))
+    val = input("Val: ")
     print()
-    if val == 1:
+    if val == "1":
         fletta_vidskiptavin_kt()
-    elif val == 2:
+    elif val == "2":
         fletta_vidskiptavin_nafn()
-    elif val == 3:
+    elif val == "3":
         fletta_vidskiptavin_simanr()
-    elif val == 4:
+    elif val == "4":
         vidskiptavinir_options()
 
 def fletta_vidskiptavin_kt():
@@ -119,17 +119,17 @@ def breyta_vidskiptavin():
     print("1. Nafni")
     print("2. Símanúmeri")
     print("3. Til baka")
-    val = int(input("Val:"))
+    val = input("Val:")
     print()
-    if val == 1:
+    if val == "1":
         nafn = input("Nafn: ")
         print("Nafni hefur verið breytt.")
         print_options()
-    elif val == 2:
+    elif val == "2":
         simanr = input("Símanúmer: ")
         print("Símanúmer hefur verið breytt.")
         print_options()
-    elif val == 3:
+    elif val == "3":
         vidskiptavinir_options()
 
 def setja_a_bannlista():
@@ -171,23 +171,23 @@ def bilafloti_options():
     print("6.  Leita að bíl")
     print("7.  Bilaðir bílar")
     print("8.  Til baka")
-    input_num = int(input("Val: "))
+    input_num = input("Val: ")
     print()
-    if input_num == 1:
+    if input_num == "1":
         birta_lausa_bila()
-    elif input_num == 2:
+    elif input_num == "2":
         birta_utleigda_bila()
-    elif input_num == 3:
+    elif input_num == "3":
         skila_bil()
-    elif input_num == 4:
+    elif input_num == "4":
         skra_bil()
-    elif input_num == 5:
+    elif input_num == "5":
         afskra_bil()
-    elif input_num == 6:
+    elif input_num == "6":
         leita_ad_bil()
-    elif input_num == 7:
+    elif input_num == "7":
         biladir_bilar()
-    elif input_num == 8:
+    elif input_num == "8":
         print_options()
 
 def birta_lausa_bila():
@@ -247,13 +247,13 @@ def biladir_bilar():
     print("2. Afskrá bíl")
     print("3. Birta bilaða bíla")
     print("4. Til baka")
-    input_num = int(input("Val: "))
+    input_num = input("Val: ")
     print()
-    if input_num == 1:
+    if input_num == "1":
         skra_bilada_bil()
-    elif input_num == 2:
+    elif input_num == "2":
         afskra_bilada_bil()
-    elif input_num == 3:
+    elif input_num == "3":
         skoda_bil()
     else:
         print_options()
@@ -283,27 +283,27 @@ def afgreidsla_options():
     print("8.  Uppfæra viðskiptavin") 
     print("9.  Breyta pöntun")
     print("10. Til baka")
-    input_num = int(input("Val: "))
+    input_num = input("Val: ")
     print()
-    if input_num == 1:
+    if input_num == "1":
         birta_lausa_bila()
-    elif input_num == 2:
+    elif input_num == "2":
         skra_vidskiptavin()
-    elif input_num == 3:
+    elif input_num == "3":
         skra_pontun()
-    elif input_num == 4:
+    elif input_num == "4":
         kostnadarmat()
-    elif input_num == 5:
+    elif input_num == "5":
         skila_bil()
-    elif input_num == 6:
+    elif input_num == "6":
         afskra_vidskiptavin()
-    elif input_num == 7:
+    elif input_num == "7":
         bakfaera_pontun()
-    elif input_num == 8:
+    elif input_num == "8":
         breyta_vidskiptavin()
-    elif input_num == 9:
+    elif input_num == "9":
         breyta_pontun()
-    elif input_num == 10:
+    elif input_num == "10":
         print_options()
 
 def skra_pontun():
@@ -369,17 +369,17 @@ def pantanir_options():
     print("3. Fletta upp pöntun")
     print("4. Bakfæra pöntun")
     print("5. Til baka")
-    input_num = int(input("Val: "))
+    input_num = input("Val: ")
     print()
-    if input_num == 1:
+    if input_num == "1":
         skra_pontun()
-    elif input_num == 2:
+    elif input_num == "2":
         breyta_pontun()
-    elif input_num == 3:
+    elif input_num == "3":
         fletta_pontun()
-    elif input_num == 4:
+    elif input_num == "4":
         bakfaera_pontun()
-    elif input_num == 5:
+    elif input_num == "5":
         print_options()
 
 def breyta_pontun():
@@ -389,14 +389,14 @@ def breyta_pontun():
     print("2. Dagsetning")
     print("3. Bíl")
     print("4. Til baka")
-    input_num = int(input("Val: "))
+    input_num = input("Val: ")
     ptin()
-    if input_num == 1:
+    if input_num == "1":
         nafn = input("Nafn: ")
-    elif input_num == 2:
+    elif input_num == "2":
         fra = input("Frá (YYYY, MM, DD): ")
         til = input("Til (YYYY, MM, DD): ")
-    elif input_num == 3:
+    elif input_num == "3":
         bil = input("Bíl: ")
     else:
         print_options()
