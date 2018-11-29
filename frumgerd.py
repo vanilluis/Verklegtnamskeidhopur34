@@ -1,26 +1,39 @@
+import os
+
+def cls():
+    os.system('cls')
+
+
+
 def print_options():
-    print("Veldu valmöguleika")
+    cls()
+    print("Veldu eitt af eftirfarandi")
+    print("-"*len("Veldu eitt af eftirfarandi"))
     print("1.  Viðskiptavinir")
     print("2.  Bílafloti")
     print("3.  Afgreiðsla")
     print("4.  Pantanir")
     print("5.  Hætta")
-    input_num = input("Val: ")
+    print("-"*len("Veldu eitt af eftirfarandi"))
+    input_num = int(input("Val: "))
     print()
-    if input_num == "1":
+    if input_num == 1:
         vidskiptavinir_options()
-    elif input_num == "2":
+    elif input_num == 2:
         bilafloti_options()
-    elif input_num == "3":
+    elif input_num == 3:
         afgreidsla_options()
-    elif input_num == "4":
+    elif input_num == 4:
         pantanir_options()
-    elif input_num == "5":
+    elif input_num == 5:
         pass
     else:
         print_options()
 
 def vidskiptavinir_options():
+    cls()
+    print("Viðskiptavinir")
+    print("-"*len("1.  Skrá nýjan viðskiptavin"))
     print("1.  Skrá nýjan viðskiptavin")
     print("2.  Fletta upp viðskiptavin")
     print("3.  Afskrá viðskiptavin")
@@ -29,39 +42,46 @@ def vidskiptavinir_options():
     print("6.  Taka af bannlista")
     print("7.  Sekta viðskiptavin")
     print("8.  Til baka")
-    input_num = input("Val: ")
+    print("-"*len("1.  Skrá nýjan viðskiptavin"))
+    input_num = int(input("Val: "))
     print()
-    if input_num == "1":
+    if input_num == 1:
         skra_vidskiptavin()
-    elif input_num == "2":
+    elif input_num == 2:
         fletta_vidskiptavin()
-    elif input_num == "3":
+    elif input_num == 3:
         afskra_vidskiptavin()
-    elif input_num == "4":
+    elif input_num == 4:
         breyta_vidskiptavin()
-    elif input_num == "5":
+    elif input_num == 5:
         setja_a_bannlista()
-    elif input_num == "6":
+    elif input_num == 6:
         taka_af_bannlista()
-    elif input_num == "7":
+    elif input_num == 7:
         sekta_vidskiptavini()
-    else:
+    elif input_num == 8:
         print_options()
 
 def skra_vidskiptavin():
+    cls()
     nafn = input("Nafn: ")
+    print("-"*len("Viðskiptavinur {} hefur verið skráður".format(nafn)) + "\n")
+    kennitala = input("Kennitala: ")
+    print("-"*len("Viðskiptavinur {} hefur verið skráður".format(nafn)) + "\n")
     símanr = input("Símanúmer: ")
-    netfang = input("Netfang: ")
-    kreditkortanumer = input("Kreditkortanr. (xxxx-xxxx-xxxx-xxxx): ")
-    kennitolu_check = input("Er vsk.vinur með kennitölu? (y/n)")
-    if kennitolu_check.lower() == "y":
-        kennitala = input("Kennitala: ")
+    print("-"*len("Viðskiptavinur {} hefur verið skráður".format(nafn)) + "\n")
     print("Viðskiptavinur {} hefur verið skráður".format(nafn))
-    print()
-    print_options()
+    print("-"*len("Viðskiptavinur {} hefur verið skráður".format(nafn)) + "\n")
+    svar = input("Fara aftur á valmynd? (j/n): ")
+    if svar.lower() == "j":
+        print_options()
+    else:
+        pass
+    # Hér eigum við eftir að bæta við virkni sem tekur inn kreditkortanúmer sem
+    # tryggingu
 
 def afskra_vidskiptavin():
-    kt = input("Hvern a að afskrá? (kennitala/netfang): ")
+    kt = input("Hvern a að afskrá? (kennitala): ")
     confirm = input("Afskrá: Jóhanna Einarsdóttir, {}? (y/n)".format(kt))
     if(confirm == "y"):
         print("Jóhanna Einarsdóttir afskráð")
@@ -75,38 +95,23 @@ def fletta_vidskiptavin():
     print("1. Kennitölu")
     print("2. Nafni")
     print("3. Símanúmeri")
-    print("4. Netfangi")
-    print("5. Til baka")
-    val = input("Val: ")
+    print("4. Til baka")
+    val = int(input("Val: "))
     print()
-    if val == "1":
+    if val == 1:
         fletta_vidskiptavin_kt()
-    elif val == "2":
+    elif val == 2:
         fletta_vidskiptavin_nafn()
-    elif val == "3":
+    elif val == 3:
         fletta_vidskiptavin_simanr()
-    elif val == "4":
-        fletta_vidskiptavin_netfang()
-    else:
+    elif val == 4:
         vidskiptavinir_options()
-
-def fletta_vidskiptavin_netfang():
-    netfang = input("Netfang: ")
-    print("Nafn: Jón Ólafsson")
-    print("Kennitala: 2903983209")
-    print("Símanr: 8886785")
-    print("Netfang: " + netfang)
-    print("Kreditkortanúmer: 1234-1234-1234-1234")
-    print()
-    print_options()
 
 def fletta_vidskiptavin_kt():
     kennitala = input("Kennitala: ")
     print("Nafn: Jón Ólafsson")
     print("Kennitala: " + kennitala)
     print("Símanr: 8886785")
-    print("Netfang: JohnnyBoy23@internet.is")
-    print("Kreditkortanúmer: 1234-1234-1234-1234")
     print()
     print_options()
 
@@ -114,9 +119,7 @@ def fletta_vidskiptavin_nafn():
     nafn = input("Nafn: ")
     print("Nafn: " + nafn)
     print("Kennitala: 0303782289")
-    print("Símanúmer: 8886785")
-    print("Netfang: JohnnyBoy23@internet.is")
-    print("Kreditkortanúmer: 1234-1234-1234-1234")
+    print("Símanr: 8886785")
     print()
     print_options()
 
@@ -125,48 +128,35 @@ def fletta_vidskiptavin_simanr():
     print("Nafn: Jón Ólafsson")
     print("Kennitala: 0303782289")
     print("Símanr: " + simanr)
-    print("Netfang: JohnnyBoy23@internet.is")
-    print("Kreditkortanúmer: 1234-1234-1234-1234")
     print()
     print_options()
 
 def breyta_vidskiptavin():
-    netfang = input("Netfang: ")
+    kennitala = input("Kennitala: ")
     print("Viðskiptavinur fundinn.")
     print("Nafn: Jón Ólafsson")
-    print("Kennitala: 2903983209")
+    print("Kennitala: " + kennitala)
     print("Símanr: 8886785")
-    print("Netfang: " + netfang)
-    print("Kreditkortanúmer: 1234-1234-1234-1234")
-
     print("Breyta: ")
     print("1. Nafni")
     print("2. Símanúmeri")
-    print("3. Netfangi")
-    print("4. Kreditkortanúmeri")
-    print("5. Til baka")
-    val = input("Val:")
+    print("3. Til baka")
+    val = int(input("Val:"))
     print()
-    if val == "1":
-        nafn = input("Nýtt nafn: ")
+    if val == 1:
+        nafn = input("Nafn: ")
         print("Nafni hefur verið breytt.")
         print_options()
-    elif val == "2":
-        simanr = input("Nýtt Símanúmer: ")
-        print("Símanúmeri hefur verið breytt.")
+    elif val == 2:
+        simanr = input("Símanúmer: ")
+        print("Símanúmer hefur verið breytt.")
         print_options()
-    elif val == "3":
-        netfang = input("Nýtt netfang: ")
-        print("Netfangi hefur verið breytt.")
-    elif val == "4":
-        kortanumer = input("Nýtt kreditkortanr. (xxxx-xxxx-xxxx-xxxx): ")
-        print("Kortanúmeri hefur verið breytt.")
-    else:
+    elif val == 3:
         vidskiptavinir_options()
 
 def setja_a_bannlista():
-    netfang = input("Netfang: ")
-    stadfesta = input("Setja á bannlista: Jón Ólafsson, {}? (y/n)".format(netfang))
+    kennitala = input("Kennitala: ")
+    stadfesta = input("Setja á bannlista: Jón Ólafsson, {}? (y/n)".format(kennitala))
     if(stadfesta == "y"):
         print("Jón Ólafsson hefur verið færður á bannlista.")
     else:
@@ -175,7 +165,7 @@ def setja_a_bannlista():
     print_options()
     
 def taka_af_bannlista():
-    kennitala = input("Kennitala/netfang: ")
+    kennitala = input("Kennitala: ")
     stadfesta = input("Taka af bannlista: Jón Ólafsson, {}? (y/n)".format(kennitala))
     if(stadfesta == "y"):
         print("Jón Ólafsson hefur verið tekinn af bannlista.")
@@ -185,17 +175,19 @@ def taka_af_bannlista():
     print_options()
     
 def sekta_vidskiptavini():
-    kennitala = input("Kennitala/netfang: ")
+    kennitala = input("Kennitala: ")
     stadfesta = input("Sekta: Jón Ólafsson, {}? (y/n)".format(kennitala))
     if(stadfesta == "y"):
-        upphaed_sektar = input("Upphæð sektar: ")
-        print("Jón Ólafsson hefur verið sektaður um {} kr.".format(upphaed_sektar))
+        print("Jón Ólafsson hefur verið sektaður.")
     else:
         print("Hætt við.") 
     print()
     print_options()
 
 def bilafloti_options():
+    cls()
+    print("Bílafloti")
+    print("-"*len("2.  Birta útleigða bíla"))
     print("1.  Birta lausa bíla")
     print("2.  Birta útleigða bíla")
     print("3.  Skila bíl")
@@ -204,23 +196,24 @@ def bilafloti_options():
     print("6.  Leita að bíl")
     print("7.  Bilaðir bílar")
     print("8.  Til baka")
-    input_num = input("Val: ")
+    print("-"*len("2.  Birta útleigða bíla"))
+    input_num = int(input("Val: "))
     print()
-    if input_num == "1":
+    if input_num == 1:
         birta_lausa_bila()
-    elif input_num == "2":
+    elif input_num == 2:
         birta_utleigda_bila()
-    elif input_num == "3":
+    elif input_num == 3:
         skila_bil()
-    elif input_num == "4":
+    elif input_num == 4:
         skra_bil()
-    elif input_num == "5":
+    elif input_num == 5:
         afskra_bil()
-    elif input_num == "6":
+    elif input_num == 6:
         leita_ad_bil()
-    elif input_num == "7":
+    elif input_num == 7:
         biladir_bilar()
-    else:
+    elif input_num == 8:
         print_options()
 
 def birta_lausa_bila():
@@ -280,13 +273,13 @@ def biladir_bilar():
     print("2. Afskrá bíl")
     print("3. Birta bilaða bíla")
     print("4. Til baka")
-    input_num = input("Val: ")
+    input_num = int(input("Val: "))
     print()
-    if input_num == "1":
+    if input_num == 1:
         skra_bilada_bil()
-    elif input_num == "2":
+    elif input_num == 2:
         afskra_bilada_bil()
-    elif input_num == "3":
+    elif input_num == 3:
         skoda_bil()
     else:
         print_options()
@@ -306,6 +299,9 @@ def skoda_bil():
     print_options()
 
 def afgreidsla_options():
+    cls()
+    print("Afgreiðsla")
+    print("-"*len("2.  Skrá nýjan viðskiptavin"))
     print("1.  Birta lausa bíla")
     print("2.  Skrá nýjan viðskiptavin")
     print("3.  Skrá pöntun")
@@ -316,31 +312,30 @@ def afgreidsla_options():
     print("8.  Uppfæra viðskiptavin") 
     print("9.  Breyta pöntun")
     print("10. Til baka")
-    input_num = input("Val: ")
-    print()
-    if input_num == "1":
+    print("-"*len("2.  Skrá nýjan viðskiptavin"))
+    input_num = int(input("Val: "))
+    if input_num == 1:
         birta_lausa_bila()
-    elif input_num == "2":
+    elif input_num == 2:
         skra_vidskiptavin()
-    elif input_num == "3":
+    elif input_num == 3:
         skra_pontun()
-    elif input_num == "4":
+    elif input_num == 4:
         kostnadarmat()
-    elif input_num == "5":
+    elif input_num == 5:
         skila_bil()
-    elif input_num == "6":
+    elif input_num == 6:
         afskra_vidskiptavin()
-    elif input_num == "7":
+    elif input_num == 7:
         bakfaera_pontun()
-    elif input_num == "8":
+    elif input_num == 8:
         breyta_vidskiptavin()
-    elif input_num == "9":
+    elif input_num == 9:
         breyta_pontun()
-    else:
+    elif input_num == 10:
         print_options()
 
 def skra_pontun():
-    kt = input("Kennitala/netfang: ")
     print("Leigutímabil?")
     fra = input("Frá (YYYY, MM, DD): ")
     til = input("Til (YYYY, MM, DD): ")
@@ -352,9 +347,9 @@ def skra_pontun():
     print("{:<12}{:<14}{:<8}{:<14}{:<12}".format("SB-463", "Fólksbíll", "1998", "Rauður", "4500 kr/dag"))
     print("{:<12}{:<14}{:<8}{:<14}{:<12}".format("EU-N45", "Smábíll", "2014", "Grár", "2500 kr/dag"))
     print()
-    bilnumer = input("Veldu bíl (AA-X99) eða n til að hætta við: ")
+    val = input("Veldu bíl (AA-X99) eða n til að hætta við: ")
     print("")
-    if bilnumer.lower() == "n":
+    if val.lower() == "n":
         print("Þú hefur hætt við að leigja út bíl")
         print()
         print_options()
@@ -362,21 +357,9 @@ def skra_pontun():
         print("Áætlaður kostnaður án tryggingar: 45.000 kr.")
         val = input("Samþykkja? (y/n): ")
         if val.lower() == "y":
-            trygging_check = input("Má bjóða þér aukatryggingu fyrir 500 kr. aukalega pr. dag? (y/n): ")
-            if trygging_check.lower() == "y":
-                print("Lokaverð 50.000 kr.")
-                val = input("Samþykkja? (y/n): ")
-                if val.lower() == "y":
-                    print("Bíllinn",bilnumer,"hefur verið leigður út ({}) - ({})".format(fra, til))
-                    print_options()
-                else:
-                    print("Þú hefur hætt við að leigja út bíl")
-                    print()
-                    print_options()
-            else:
-                print("Bíllinn",bilnumer,"hefur verið leigður út ({}) - ({})".format(fra, til))
-                print()
-                print_options()
+            print("Bíllinn",val,"hefur verið leigður út ({}) - ({})".format(fra, til))
+            print()
+            print_options()
         else:
             print("Þú hefur hætt við að leigja út bíl")
             print()
@@ -385,7 +368,7 @@ def skra_pontun():
 def kostnadarmat():
     fra = input("Frá (YYYY, MM, DD): ")
     til = input("Til (YYYY, MM, DD): ")
-    # Hér er sett inn copy úr fallinu birta_lausa_bila()
+    # Hér er sett inn copy úr fallinu birta_laus_bila()
     print("Eftirfarandi bílar eru lausir frá {} til {}:".format(fra, til))
     print("{:<12}{:<14}{:<8}{:<14}{:<12}".format("Bílnúmer", "Tegund", "Árgerð", "Litur", "Verð"))
     print(60*"-")
@@ -406,64 +389,59 @@ def kostnadarmat():
     dagar = dagur_b - dagur_a + 1
     verd_samtals = dagar*bill_verd
     print("Kostnaðarmat:", verd_samtals, "Kr.")
-    print()
     print_options()
 
 def pantanir_options():
-    print("1. Skrá pöntun")
-    print("2. Breyta pöntun")
-    print("3. Fletta upp pöntun")
-    print("4. Bakfæra pöntun")
-    print("5. Til baka")
-    input_num = input("Val: ")
-    print()
-    if input_num == "1":
+    cls()
+    print("Pantanir")
+    print("-"*len("3.  Fletta upp pöntun"))
+    print("1.  Skrá pöntun")
+    print("2.  Breyta pöntun")
+    print("3.  Fletta upp pöntun")
+    print("4.  Bakfæra pöntun")
+    print("5.  Til baka")
+    print("-"*len("3.  Fletta upp pöntun"))
+    input_num = int(input("Val: "))
+    if input_num == 1:
         skra_pontun()
-    elif input_num == "2":
+    elif input_num == 2:
         breyta_pontun()
-    elif input_num == "3":
+    elif input_num == 3:
         fletta_pontun()
-    elif input_num == "4":
+    elif input_num == 4:
         bakfaera_pontun()
-    else:
+    elif input_num == 5:
         print_options()
 
 def breyta_pontun():
-    kennitala = input("Hver er kennitalan/netfangið? ")
+    kennitala = input("Hver er kenntialan? ")
     print("Hverju viltu breyta?")
-    print("1. Pöntunarnúmeri")
-    print("2. Dagsetningu")
+    print("1. Nafn")
+    print("2. Dagsetning")
     print("3. Bíl")
     print("4. Til baka")
-    input_num = input("Val: ")
-    print()
-    if input_num == "1":
-        pontunarnumer = input("Nýtt pöntunarnúmer: ")
-        print("Pöntunarnúmeri hefur verið breytt.")
-        print()
-    elif input_num == "2":
+    input_num = int(input("Val: "))
+    if input_num == 1:
+        nafn = input("Nafn: ")
+    elif input_num == 2:
         fra = input("Frá (YYYY, MM, DD): ")
         til = input("Til (YYYY, MM, DD): ")
-        print("Dagsetningu hefur verið breytt.")
-        print()
-    elif input_num == "3":
+    elif input_num == 3:
         bil = input("Bíl: ")
-        print("Nýr bíll hefur verið valinn")
-        print()
     else:
         print_options()
     print_options()
 
 def fletta_pontun():
-    kt = input("Kennitala/netfang pöntunar: ")
-    print("Viðskiptavinurinn Ásgeir Jónasson, {} hefur pantað bílinn SB-463 á tímabilinu 10/12/18 til 14/12/18".format(kt))
+    kt = input("Kennitala pöntunar: ")
+    print("Viðskiptavinurinn Ásgeir Jónasson, kt. {} hefur pantað bílinn SB-463 á tímabilinu 10/12/18 til 14/12/18".format(kt))
     print()
     print_options()
 
 def bakfaera_pontun():
     # fletta_pontun()
-    kt = input("Kennitala/netfang pöntunar: ")
-    print("Viðskiptavinurinn Ásgeir Jónasson, {} hefur pantað bílinn\n SB-463 á tímabilinu 10/12/18 til 14/12/18".format(kt))
+    kt = input("Kennitala pöntunar: ")
+    print("Viðskiptavinurinn Ásgeir Jónasson, kt. {} hefur pantað bílinn\n SB-463 á tímabilinu 10/12/18 til 14/12/18".format(kt))
     choice = input("Viltu eyða þessari pöntun? (y/n)")
     if(choice == "y"):
         print("Pöntuninni hefur verið eytt")
@@ -473,19 +451,24 @@ def bakfaera_pontun():
     print_options()
 
 def main():
-  print()
-  print("Velkomin í Bílaleiguna IceCarRentals.")
-  print("-"*37)
-  n = 7
-  print("{}        _______".format(" "*n))
-  print("{}       //  ||\ \ ".format(" "*n))
-  print("{}  ____//___||_\ \__".format(" "*n))
-  print("{} )  _          _    \ ".format(" "*n))
-  print("{} |_/ \________/ \___|".format(" "*n))
-  print("{}___\_/________\_/_____".format(" "*n))
-  print("{}Drive cheap, not safe!".format(" "*n))
-  print("-"*37)
-  print_options()
+    print()
+    print("Velkomin í Bílaleiguna IceCarRentals.")
+    print("-"*37)
+    n = 7
+    print("{}        _______".format(" "*n))
+    print("{}       //  ||\ \ ".format(" "*n))
+    print("{}  ____//___||_\ \__".format(" "*n))
+    print("{} )  _          _    \ ".format(" "*n))
+    print("{} |_/ \________/ \___|".format(" "*n))
+    print("{}___\_/________\_/_____".format(" "*n))
+    print("{}Drive cheap, not safe!".format(" "*n))
+    print("-"*37)
+    svar = input("Keyra forrit? (j/n): ")
+    if svar.lower() == "j":
+        print_options()
+    else:
+        pass
 
 
 main()
+
